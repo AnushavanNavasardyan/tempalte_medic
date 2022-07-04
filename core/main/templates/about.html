@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block css %}
+	
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+                
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/templatemo-medic-care.css' %}" rel="stylesheet">
+    {% endblock %}
+
+
+{% block content%}
+            <section class="section-padding" id="about">
+                <div class="container">
+                    {% for i in contexet %}
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <h2 class="mb-lg-3 mb-3">{{ i.drName }}</h2>
+
+                            <p>{{ i.about }}</p>
+
+                            
+                        </div>
+
+                        <div class="col-lg-4 col-md-5 col-12 mx-auto">
+                            <div class="featured-circle bg-white shadow-lg d-flex justify-content-center align-items-center">
+                                <p class="featured-text"><span class="featured-number">12</span> Years<br> of Experiences</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="gallery">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-6 ps-0">
+                            <img src="../../media/media/medium-shot-man-getting-vaccine.jpg" class="img-fluid galleryImage" alt="get a vaccine" title="get a vaccine for yourself">
+                        </div>
+
+                        <div class="col-lg-6 col-6 pe-0">
+                            <img src="../../media/media/female-doctor-with-presenting-hand-gesture.jpg" class="img-fluid galleryImage" alt="wear a mask" title="wear a mask to protect yourself">
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+{% endblock %}
+
+
+
+
+
+    {% block js%}
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/scrollspy.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+
+    {% endblock %}

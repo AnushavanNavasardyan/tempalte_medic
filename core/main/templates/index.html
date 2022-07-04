@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block css %}
+	
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+                
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/templatemo-medic-care.css' %}" rel="stylesheet">
+    {% endblock %}
+
+{% block content%}
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="row">
+                {% for i in inddexPage%}
+                <div class="col-12">
+                    <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="" class="img-fluid" alt="">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="" class="img-fluid" alt="">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="heroText d-flex flex-column justify-content-center">
+
+                        <h1 class="mt-auto mb-2">
+                            Better
+                            <div class="animated-info">
+                                <span class="animated-item">{{ i.name1 }}</span>
+                                <span class="animated-item">{{ i.name2 }}</span>
+                                <span class="animated-item">{{ i.name3 }}</span>
+                            </div>
+                        </h1>
+
+                        <p class="mb-4">{{ i.about }}</p>
+
+                        <div class="heroLinks d-flex flex-wrap align-items-center">
+                            <a class="custom-link me-4" href="{% url 'about' %}" data-hover="Learn More">Learn More</a>
+
+                            <p class="contact-phone mb-0"><i class="bi-phone"></i>{{ i.number }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+
+
+
+    {% block js%}
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/scrollspy.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+
+    {% endblock %}

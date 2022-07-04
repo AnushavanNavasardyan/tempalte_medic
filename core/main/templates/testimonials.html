@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block css %}
+	
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+                
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'css/templatemo-medic-care.css' %}" rel="stylesheet">
+    {% endblock %}
+
+{% block content%}
+
+
+<section class="section-padding pb-0" id="reviews">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <h2 class="text-center mb-lg-5 mb-4">Our Patients</h2>
+
+                <div class="owl-carousel reviews-carousel">
+
+                    <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded">
+                        <div class="reviews-stars">
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star"></i>
+                        </div>
+
+                        <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Best Health Care</strong></p>
+
+                        <p class="reviews-text w-100">Phasellus ligula ante, tempus ac imperdiet ut, mattis ac nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                        <img src="../../media/media/beautiful-woman-face-portrait-brown-background.jpeg" class="img-fluid reviews-image" alt="">
+
+                        <figcaption class="ms-4">
+                            <strong>Marie</strong>
+
+                            <span class="text-muted">Patient</span>
+                        </figcaption>
+                    </figure>
+
+                    {% for i in testimonialsPage %}
+                    <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded">
+                        <div class="reviews-stars">
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star-fill"></i>
+                            <i class="bi-star"></i>
+                        </div>
+
+                        <p class="text-primary d-block mt-2 mb-0 w-100"><strong>{{ i.opinion1 }}</strong></p>
+
+                        <p class="reviews-text w-100">{{ i.opinion2 }}</p>
+
+                        <img src="{{ i.img.url }}" class="img-fluid reviews-image" alt="">
+
+                        <figcaption class="ms-4">
+                            <strong>{{ i.nameCustomer }}</strong>
+
+                            <span class="text-muted">{{ i.aboutCustomer }}</span>
+                        </figcaption>
+                    </figure>
+                    {% endfor %}
+
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
+
+
+
+
+    {% block js%}
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/scrollspy.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+
+    {% endblock %}
